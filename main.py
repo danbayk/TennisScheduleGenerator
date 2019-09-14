@@ -1,131 +1,47 @@
 import random
-import itertools
 
+class Players:
+    name = ""
+    id = 0
+    playedWith = []
 
-p1 = "Tom"
-p2 = "Brad"
-p3 = "Chad"
-p4 = "Frank"
-p5 = "John"
-p6 = "Alex"
-p7 = "Thomas"
-p8 = "Phil"
-p9 = "Dan"
-p10 = "Robert"
-p11 = "Dequavis"
-p12 = "Zack"
+    def __init__(self, id):
+        self.id = id
 
-p1playedwith = []
-p2playedwith = []
-p3playedwith = []
-p4playedwith = []
-p5playedwith = []
-p6playedwith = []
-p7playedwith = []
-p8playedwith = []
-p9playedwith = []
-p10playedwith = []
-p11playedwith = []
-p12playedwith = []
+    def played(self, id):
+        self.playedWith.append(id)
 
-p1playedagainst = []
-p2playedagainst = []
-p3playedagainst = []
-p4playedagainst = []
-p5playedagainst = []
-p6playedagainst = []
-p7playedagainst = []
-p8playedagainst = []
-p9playedagainst = []
-p10playedagainst = []
-p11playedagainst = []
-p12playedagainst = []
+    def name(self, name):
+        self.name = name
 
-players = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12]
+p1 = Players(1)
+p2 = Players(2)
+p3 = Players(3)
+p4 = Players(4)
+p5 = Players(5)
+p6 = Players(6)
+p7 = Players(7)
+p8 = Players(8)
+p9 = Players(9)
+p10 = Players(10)
+p11 = Players(11)
+p12 = Players(12)
 
-random.shuffle(players)
+p1.name = "Chad"
+p2.name = "Brad"
+p3.name = "Rob"
+p4.name = "Zack"
+p5.name = "Phil"
+p6.name = "Dan"
+p7.name = "Vector"
+p8.name = "Vvs"
+p9.name = "Ben"
+p10.name = "Goin"
+p11.name = "Fdfd"
+p12.name = "Rurur"
 
-dub1 = players[0], players[1]
-dub2 = players[2], players[3]
-dub3 = players[4], players[5]
-dub4 = players[6], players[7]
-dub5 = players[8], players[9]
-dub6 = players[10], players[11]
+player = [p1.name, p2.name, p3.name, p4.name, p5.name, p6.name, p7.name, p8.name, p9.name, p10.name, p11.name, p12.name]
 
-p1playedwith.append(dub1)
-p2playedwith.append(dub1)
-p3playedwith.append(dub2)
-p4playedwith.append(dub2)
-p5playedwith.append(dub3)
-p6playedwith.append(dub3)
-p7playedwith.append(dub4)
-p8playedwith.append(dub4)
-p9playedwith.append(dub5)
-p10playedwith.append(dub5)
-p11playedwith.append(dub6)
-p12playedwith.append(dub6)
+random.shuffle(player)
 
-p1playedagainst.append(dub2)
-p2playedagainst.append(dub2)
-p3playedagainst.append(dub1)
-p4playedagainst.append(dub1)
-p5playedagainst.append(dub4)
-p6playedagainst.append(dub4)
-p7playedagainst.append(dub3)
-p8playedagainst.append(dub3)
-p9playedagainst.append(dub6)
-p10playedagainst.append(dub6)
-p11playedagainst.append(dub5)
-p12playedagainst.append(dub5)
-
-random.shuffle(players)
-
-dub1 = players[0], players[1]
-dub2 = players[2], players[3]
-dub3 = players[4], players[5]
-dub4 = players[6], players[7]
-dub5 = players[8], players[9]
-dub6 = players[10], players[11]
-
-'''
-players = ["Tom", "Chad", "Brad", "Don", "Kevin", "Arnold", "Rod", "Joe"]
-
-# results = list(itertools.permutations(players, 4))
-random.shuffle(players)
-x = 0
-
-testgroup = []
-firstdubs = []
-seconddubs = []
-
-for y in range(8):
-    testgroup.append(players[x])
-    x = x+1
-
-x = 0
-
-for r in range(4):
-    firstdubs.append(testgroup[x])
-    x = x+1
-
-for t in range(4):
-    seconddubs.append(testgroup[x])
-    x = x+1
-
-firstdoubles = firstdubs
-seconddoubles = seconddubs
-
-
-print ("First Match: COURT1:", firstdoubles)
-print ("First Match: COURT2:", seconddoubles)
-
-firstdoubles = [firstdubs[0], seconddubs[0], firstdubs[1], seconddubs[1]]
-seconddoubles = [firstdubs[2], seconddubs[2], firstdubs[3], seconddubs[3]]
-
-print ("Second Match: COURT1:", firstdoubles)
-print ("Second Match: COURT2:", seconddoubles)
-
-# firstdoubles.insert(0, firstdoubles.pop())
-# seconddoubles.insert(0, seconddoubles.pop())
-'''
-
+p1.playedWith(player())
