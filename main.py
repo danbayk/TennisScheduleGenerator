@@ -1,15 +1,13 @@
 import random
 
 class Players:
-    name = ""
-    id = 0
-    playedWith = []
 
     def __init__(self, id):
         self.id = id
+        self.playedWith = []
 
-    def played(self, id):
-        self.playedWith.append(id)
+    def add_player(self, playedWith):
+        self.playedWith = playedWith
 
     def name(self, name):
         self.name = name
@@ -40,8 +38,33 @@ p10.name = "Goin"
 p11.name = "Fdfd"
 p12.name = "Rurur"
 
-player = [p1.name, p2.name, p3.name, p4.name, p5.name, p6.name, p7.name, p8.name, p9.name, p10.name, p11.name, p12.name]
+player = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12]
 
 random.shuffle(player)
 
-p1.playedWith(player())
+dub1 = [player[0].name, player[1].name]
+dub2 = [player[2].name, player[3].name]
+dub3 = [player[4].name, player[5].name]
+dub4 = [player[6].name, player[7].name]
+dub5 = [player[8].name, player[9].name]
+dub6 = [player[10].name, player[11].name]
+
+dubpair1 = [dub1, dub2]
+dubpair2 = [dub3, dub4]
+dubpair3 = [dub5, dub6]
+
+player[1].add_player(dub1)
+player[2].add_player(dub1)
+player[3].add_player(dub2)
+player[4].add_player(dub2)
+player[5].add_player(dub3)
+player[6].add_player(dub3)
+player[7].add_player(dub4)
+player[8].add_player(dub4)
+player[9].add_player(dub5)
+player[10].add_player(dub6)
+player[11].add_player(dub6)
+
+# First set of double pair created
+
+random.shuffle(player)
