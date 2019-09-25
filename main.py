@@ -53,14 +53,15 @@ dubpair1 = [dub1, dub2]
 dubpair2 = [dub3, dub4]
 dubpair3 = [dub5, dub6]
 
+player[0].add_player(dub1)
 player[1].add_player(dub1)
-player[2].add_player(dub1)
+player[2].add_player(dub2)
 player[3].add_player(dub2)
-player[4].add_player(dub2)
+player[4].add_player(dub3)
 player[5].add_player(dub3)
-player[6].add_player(dub3)
+player[6].add_player(dub4)
 player[7].add_player(dub4)
-player[8].add_player(dub4)
+player[8].add_player(dub5)
 player[9].add_player(dub5)
 player[10].add_player(dub6)
 player[11].add_player(dub6)
@@ -68,3 +69,9 @@ player[11].add_player(dub6)
 # First set of double pair created
 
 random.shuffle(player)
+
+testdub = [player[0], player[1]]
+
+
+if player[0].playedWith[1] == testdub[0] or testdub[1]:
+    print "fuck off"
