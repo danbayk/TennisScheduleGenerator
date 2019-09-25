@@ -32,11 +32,11 @@ p4.name = "Zack"
 p5.name = "Phil"
 p6.name = "Dan"
 p7.name = "Vector"
-p8.name = "Vvs"
+p8.name = "Robert"
 p9.name = "Ben"
-p10.name = "Goin"
-p11.name = "Fdfd"
-p12.name = "Rurur"
+p10.name = "Thomas"
+p11.name = "Brendan"
+p12.name = "Rick"
 
 player = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12]
 
@@ -72,6 +72,22 @@ random.shuffle(player)
 
 testdub = [player[0], player[1]]
 
+def secondRound():
+    random.shuffle(player)
+    duba1 = [player[0].name, player[1].name]
+    duba2 = [player[2].name, player[3].name]
+    duba3 = [player[4].name, player[5].name]
+    duba4 = [player[6].name, player[7].name]
+    duba5 = [player[8].name, player[9].name]
+    duba6 = [player[10].name, player[11].name]
 
-if player[0].playedWith[1] == testdub[0] or testdub[1]:
-    print "fuck off"
+    if player[0].playedWith[1] in duba1[1]:
+        secondRound()
+    elif player[1].playedWith[1] in duba1[1]:
+        secondRound()
+    else:
+        print "success"
+
+secondRound()
+
+
