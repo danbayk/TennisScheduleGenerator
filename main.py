@@ -63,18 +63,18 @@ dubpair2 = [dub3, dub4]
 dubpair3 = [dub5, dub6]
 
 # Add player's first round partner to the player's playedWith list
-player[0].add_player(dub1)
-player[1].add_player(dub1)
-player[2].add_player(dub2)
-player[3].add_player(dub2)
-player[4].add_player(dub3)
-player[5].add_player(dub3)
-player[6].add_player(dub4)
-player[7].add_player(dub4)
-player[8].add_player(dub5)
-player[9].add_player(dub5)
-player[10].add_player(dub6)
-player[11].add_player(dub6)
+player[0].add_player(player[1])
+player[1].add_player(player[0])
+player[2].add_player(player[3])
+player[3].add_player(player[2])
+player[4].add_player(player[5])
+player[5].add_player(player[4])
+player[6].add_player(player[7])
+player[7].add_player(player[6])
+player[8].add_player(player[9])
+player[9].add_player(player[8])
+player[10].add_player(player[11])
+player[11].add_player(player[10])
 
 # First set of double pair created, will need to be printed and code above should be in a function
 
@@ -91,13 +91,49 @@ def secondRound():
     duba6 = [player[10].name, player[11].name]
 
     # Checks if a player's new partner is in their playedWith list
-    if player[0].playedWith[1] in duba1[1]:
-        secondRound()
-    elif player[1].playedWith[1] in duba1[1]:
-        secondRound()
-    else:
-        print "success"
+    # if player[0].playedWith.name in duba1[1]:
+    #     secondRound()
+    # elif player[1].playedWith.name in duba1[1]:
+    #     secondRound()
+    # else:
+    #     print "success"
+
+    counter = 0   #counts while loop
+    dubaNum = 1   #for dubNum
+    dubNum = duba1   #double pair name
+    playerNum = 0   #for playerNum
+    dubCounter = 0   #for assigning dubNum
+    while counter > 6:
+        if player[playerNum].playedWith.name in dubNum[dubaNum]:
+            secondRound()
+            counter = 0
+            dubaNum = 1
+            dubNum = duba1
+            playerNum = 0
+        else:
+            if dubCounter == 0:
+                dubNum = duba1
+            elif dubCounter == 1:
+                dubNum = duba2
+            elif dubCounter == 2:
+                dubNum = duba3
+            elif dubCounter == 3:
+                dubNum = duba4
+            elif dubCounter == 4:
+                dubNum = duba5
+            elif dubCounter == 5:
+                dubNum = duba5
+            elif dubCounter == 6:
+                dubNum = duba6
+
+            counter = counter + 1
+            dubNum = duba2
+            playerNum = 1
+
+
+
+
+
 
 secondRound()
-
 
