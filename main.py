@@ -3,16 +3,23 @@ import random
 # Create objects for players with ID and playedWith list, will use ID later
 class Players:
 
-    def __init__(self, id):
-        self.id = id
+    def __init__(self, name):
+        self.name = name
+        #self.id = id
         self.playedWith = []
 
-    def add_player(self, playedWith):
-        self.playedWith = playedWith
+    # def add_player(self, playedWith):
+    #     self.playedWith = playedWith
 
-    def name(self, name):
-        self.name = name
+    def name(self, id):
+        self.id = id
 
+playerList = []
+playerList.append(Players("Richard"))
+playerList.append(Players("Chad"))
+
+playerList[0].append(playerList[1])
+print playerList[0].name
 
 # Create player objects
 p1 = Players(1)
@@ -29,23 +36,23 @@ p11 = Players(11)
 p12 = Players(12)
 
 # Give temporary placeholder names for players
-p1.name = "Chad"
-p2.name = "Brad"
-p3.name = "Rob"
-p4.name = "Zack"
-p5.name = "Phil"
-p6.name = "Dan"
-p7.name = "Vector"
-p8.name = "Robert"
-p9.name = "Ben"
-p10.name = "Thomas"
-p11.name = "Brendan"
-p12.name = "Rick"
+Players(1).name = "Chad"
+Players(2).name = "Brad"
+Players(3).name = "Rob"
+Players(4).name = "Zack"
+Players(5).name = "Phil"
+Players(6).name = "Dan"
+Players(7).name = "Vector"
+Players(8).name = "Robert"
+Players(9).name = "Ben"
+Players(10).name = "Thomas"
+Players(11).name = "Brendan"
+Players(12).name = "Rick"
 
 # Create player list to be mixed
-player = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12]
+#player = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12]
+player = [Players(1), Players(12), Players(3), Players(4), Players(5), Players(6), Players(7), Players(8), Players(9), Players(10), Players(11), Players(12)]
 
-# LINES 45-69 NEED TO BE IN FUNCTION
 def firstRound():
     random.shuffle(player)
 
@@ -64,6 +71,7 @@ def firstRound():
 
     # Add player's first round partner to the player's playedWith list
     player[0].add_player(player[1])
+    #player[0].playedWith.extend(player[1])
     player[1].add_player(player[0])
     player[2].add_player(player[3])
     player[3].add_player(player[2])
@@ -96,7 +104,7 @@ def secondRound():
     dubNum = duba1   #double pair name
     playerNum = 0   #for playerNum
     dubCounter = 0   #for assigning dubNum
-    while counter > 6:
+    while counter >= 6:
         if player[playerNum].playedWith.name in dubNum[dubaNum]:
             counter = 0
             dubaNum = 1
@@ -104,6 +112,9 @@ def secondRound():
             playerNum = 0
             secondRound()
         else:
+            counter = counter + 1
+            playerNum = playerNum + 1
+
             if dubCounter == 0:
                 dubNum = duba1
             elif dubCounter == 1:
@@ -132,12 +143,8 @@ def secondRound():
             elif counter == 6:
                 dubaNum = 1
 
+# firstRound()
+# secondRound()
 
-            counter = counter + 1
-            playerNum = playerNum + 1
 
-    print "success"
-
-firstRound()
-secondRound()
 
