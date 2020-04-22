@@ -1,8 +1,16 @@
-import sys
-import random
-sys.setrecursionlimit(2000)
+# -*- coding: utf-8 -*-
 
-rounds = 3
+# Form implementation generated from reading ui file 'test.ui'
+#
+# Created by: PyQt5 UI code generator 5.13.0
+#
+# WARNING! All changes made in this file will be lost!
+
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+import random
+
+players = []
 
 class Players:
     def __init__(self, name):
@@ -12,48 +20,772 @@ class Players:
     def addPlayer(self, player):
         self.playedWith.append(player)
 
-p1 = Players("Tom")
-p2 = Players("Eric")
-p3 = Players("Arnold")
-p4 = Players("Tommy")
-p5 = Players("Chad")
-p6 = Players("Robert")
-p7 = Players("Annie")
-p8 = Players("Mike")
 
-players = [p1, p2, p3, p4, p5, p6, p7, p8]
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(830, 564)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.Button1 = QtWidgets.QPushButton(self.centralwidget)
+        self.Button1.setGeometry(QtCore.QRect(160, 130, 101, 31))
+        self.Button1.setObjectName("Button1")
+        self.addPlayer = QtWidgets.QPushButton(self.centralwidget)
+        self.addPlayer.setGeometry(QtCore.QRect(160, 50, 101, 31))
+        self.addPlayer.setObjectName("addPlayer")
+        self.deletePlayer = QtWidgets.QPushButton(self.centralwidget)
+        self.deletePlayer.setGeometry(QtCore.QRect(160, 90, 101, 31))
+        self.deletePlayer.setObjectName("deletePlayer")
+        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit.setGeometry(QtCore.QRect(30, 50, 113, 20))
+        self.lineEdit.setObjectName("lineEdit")
+        self.lineEdit8 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit8.setGeometry(QtCore.QRect(30, 260, 113, 20))
+        self.lineEdit8.setObjectName("lineEdit8")
+        self.lineEdit7 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit7.setGeometry(QtCore.QRect(30, 230, 113, 20))
+        self.lineEdit7.setObjectName("lineEdit7")
+        self.lineEdit6 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit6.setGeometry(QtCore.QRect(30, 200, 113, 20))
+        self.lineEdit6.setObjectName("lineEdit6")
+        self.lineEdit5 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit5.setGeometry(QtCore.QRect(30, 170, 113, 20))
+        self.lineEdit5.setObjectName("lineEdit5")
+        self.lineEdit4 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit4.setGeometry(QtCore.QRect(30, 140, 113, 20))
+        self.lineEdit4.setObjectName("lineEdit4")
+        self.lineEdit3 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit3.setGeometry(QtCore.QRect(30, 110, 113, 20))
+        self.lineEdit3.setObjectName("lineEdit3")
+        self.lineEdit2 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit2.setGeometry(QtCore.QRect(30, 80, 113, 20))
+        self.lineEdit2.setObjectName("lineEdit2")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(30, 10, 121, 31))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
+        self.lineEdit9 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit9.setGeometry(QtCore.QRect(30, 290, 113, 20))
+        self.lineEdit9.setObjectName("lineEdit9")
+        self.lineEdit10 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit10.setGeometry(QtCore.QRect(30, 320, 113, 20))
+        self.lineEdit10.setObjectName("lineEdit10")
+        self.lineEdit11 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit11.setGeometry(QtCore.QRect(30, 350, 113, 20))
+        self.lineEdit11.setObjectName("lineEdit11")
+        self.lineEdit15 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit15.setGeometry(QtCore.QRect(30, 470, 113, 20))
+        self.lineEdit15.setObjectName("lineEdit15")
+        self.lineEdit12 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit12.setGeometry(QtCore.QRect(30, 380, 113, 20))
+        self.lineEdit12.setObjectName("lineEdit12")
+        self.lineEdit14 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit14.setGeometry(QtCore.QRect(30, 440, 113, 20))
+        self.lineEdit14.setObjectName("lineEdit14")
+        self.lineEdit13 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit13.setGeometry(QtCore.QRect(30, 410, 113, 20))
+        self.lineEdit13.setObjectName("lineEdit13")
+        self.lineEdit16 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit16.setGeometry(QtCore.QRect(30, 500, 113, 20))
+        self.lineEdit16.setObjectName("lineEdit16")
+        self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(280, 10, 121, 31))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(False)
+        font.setWeight(50)
+        self.label_2.setFont(font)
+        self.label_2.setObjectName("label_2")
+        self.court1 = QtWidgets.QLabel(self.centralwidget)
+        self.court1.setGeometry(QtCore.QRect(280, 50, 81, 21))
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        font.setBold(False)
+        font.setWeight(50)
+        self.court1.setFont(font)
+        self.court1.setObjectName("court1")
+        self.labelp3 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp3.setGeometry(QtCore.QRect(280, 140, 71, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp3.setFont(font)
+        self.labelp3.setText("")
+        self.labelp3.setObjectName("labelp3")
+        self.labelp1 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp1.setGeometry(QtCore.QRect(280, 90, 51, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp1.setFont(font)
+        self.labelp1.setText("")
+        self.labelp1.setObjectName("labelp1")
+        self.labelp4 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp4.setGeometry(QtCore.QRect(350, 140, 61, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp4.setFont(font)
+        self.labelp4.setText("")
+        self.labelp4.setObjectName("labelp4")
+        self.labelp2 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp2.setGeometry(QtCore.QRect(350, 90, 61, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp2.setFont(font)
+        self.labelp2.setText("")
+        self.labelp2.setObjectName("labelp2")
+        self.court2 = QtWidgets.QLabel(self.centralwidget)
+        self.court2.setGeometry(QtCore.QRect(420, 50, 81, 21))
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        font.setBold(False)
+        font.setWeight(50)
+        self.court2.setFont(font)
+        self.court2.setObjectName("court2")
+        self.labelp5 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp5.setGeometry(QtCore.QRect(420, 90, 51, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp5.setFont(font)
+        self.labelp5.setText("")
+        self.labelp5.setObjectName("labelp5")
+        self.labelp6 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp6.setGeometry(QtCore.QRect(490, 90, 61, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp6.setFont(font)
+        self.labelp6.setText("")
+        self.labelp6.setObjectName("labelp6")
+        self.labelp7 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp7.setGeometry(QtCore.QRect(420, 140, 71, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp7.setFont(font)
+        self.labelp7.setText("")
+        self.labelp7.setObjectName("labelp7")
+        self.labelp8 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp8.setGeometry(QtCore.QRect(490, 140, 61, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp8.setFont(font)
+        self.labelp8.setText("")
+        self.labelp8.setObjectName("labelp8")
+        self.court3 = QtWidgets.QLabel(self.centralwidget)
+        self.court3.setGeometry(QtCore.QRect(550, 50, 81, 21))
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        font.setBold(False)
+        font.setWeight(50)
+        self.court3.setFont(font)
+        self.court3.setObjectName("court3")
+        self.labelp9 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp9.setGeometry(QtCore.QRect(550, 90, 51, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp9.setFont(font)
+        self.labelp9.setText("")
+        self.labelp9.setObjectName("labelp9")
+        self.labelp10 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp10.setGeometry(QtCore.QRect(620, 90, 61, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp10.setFont(font)
+        self.labelp10.setText("")
+        self.labelp10.setObjectName("labelp10")
+        self.labelp11 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp11.setGeometry(QtCore.QRect(550, 140, 71, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp11.setFont(font)
+        self.labelp11.setText("")
+        self.labelp11.setObjectName("labelp11")
+        self.labelp12 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp12.setGeometry(QtCore.QRect(620, 140, 61, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp12.setFont(font)
+        self.labelp12.setText("")
+        self.labelp12.setObjectName("labelp12")
+        self.labelp17 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp17.setGeometry(QtCore.QRect(280, 220, 51, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp17.setFont(font)
+        self.labelp17.setText("")
+        self.labelp17.setObjectName("labelp17")
+        self.labelp18 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp18.setGeometry(QtCore.QRect(350, 220, 61, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp18.setFont(font)
+        self.labelp18.setText("")
+        self.labelp18.setObjectName("labelp18")
+        self.labelp20 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp20.setGeometry(QtCore.QRect(350, 270, 61, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp20.setFont(font)
+        self.labelp20.setText("")
+        self.labelp20.setObjectName("labelp20")
+        self.court1_2 = QtWidgets.QLabel(self.centralwidget)
+        self.court1_2.setGeometry(QtCore.QRect(280, 180, 81, 21))
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        font.setBold(False)
+        font.setWeight(50)
+        self.court1_2.setFont(font)
+        self.court1_2.setObjectName("court1_2")
+        self.labelp19 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp19.setGeometry(QtCore.QRect(280, 270, 71, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp19.setFont(font)
+        self.labelp19.setText("")
+        self.labelp19.setObjectName("labelp19")
+        self.labelp21 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp21.setGeometry(QtCore.QRect(420, 220, 51, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp21.setFont(font)
+        self.labelp21.setText("")
+        self.labelp21.setObjectName("labelp21")
+        self.labelp22 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp22.setGeometry(QtCore.QRect(490, 220, 61, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp22.setFont(font)
+        self.labelp22.setText("")
+        self.labelp22.setObjectName("labelp22")
+        self.labelp24 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp24.setGeometry(QtCore.QRect(490, 270, 61, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp24.setFont(font)
+        self.labelp24.setText("")
+        self.labelp24.setObjectName("labelp24")
+        self.court2_2 = QtWidgets.QLabel(self.centralwidget)
+        self.court2_2.setGeometry(QtCore.QRect(420, 180, 81, 21))
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        font.setBold(False)
+        font.setWeight(50)
+        self.court2_2.setFont(font)
+        self.court2_2.setObjectName("court2_2")
+        self.labelp23 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp23.setGeometry(QtCore.QRect(420, 270, 71, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp23.setFont(font)
+        self.labelp23.setText("")
+        self.labelp23.setObjectName("labelp23")
+        self.labelp25 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp25.setGeometry(QtCore.QRect(550, 220, 51, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp25.setFont(font)
+        self.labelp25.setText("")
+        self.labelp25.setObjectName("labelp25")
+        self.labelp26 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp26.setGeometry(QtCore.QRect(620, 220, 61, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp26.setFont(font)
+        self.labelp26.setText("")
+        self.labelp26.setObjectName("labelp26")
+        self.labelp28 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp28.setGeometry(QtCore.QRect(620, 270, 61, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp28.setFont(font)
+        self.labelp28.setText("")
+        self.labelp28.setObjectName("labelp28")
+        self.court3_2 = QtWidgets.QLabel(self.centralwidget)
+        self.court3_2.setGeometry(QtCore.QRect(550, 180, 81, 21))
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        font.setBold(False)
+        font.setWeight(50)
+        self.court3_2.setFont(font)
+        self.court3_2.setObjectName("court3_2")
+        self.labelp27 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp27.setGeometry(QtCore.QRect(550, 270, 71, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp27.setFont(font)
+        self.labelp27.setText("")
+        self.labelp27.setObjectName("labelp27")
+        self.labelp13 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp13.setGeometry(QtCore.QRect(670, 90, 51, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp13.setFont(font)
+        self.labelp13.setText("")
+        self.labelp13.setObjectName("labelp13")
+        self.labelp14 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp14.setGeometry(QtCore.QRect(740, 90, 61, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp14.setFont(font)
+        self.labelp14.setText("")
+        self.labelp14.setObjectName("labelp14")
+        self.court4 = QtWidgets.QLabel(self.centralwidget)
+        self.court4.setGeometry(QtCore.QRect(670, 50, 81, 21))
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        font.setBold(False)
+        font.setWeight(50)
+        self.court4.setFont(font)
+        self.court4.setObjectName("court4")
+        self.labelp16 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp16.setGeometry(QtCore.QRect(740, 140, 61, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp16.setFont(font)
+        self.labelp16.setText("")
+        self.labelp16.setObjectName("labelp16")
+        self.labelp15 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp15.setGeometry(QtCore.QRect(670, 140, 71, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp15.setFont(font)
+        self.labelp15.setText("")
+        self.labelp15.setObjectName("labelp15")
+        self.labelp30 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp30.setGeometry(QtCore.QRect(740, 220, 61, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp30.setFont(font)
+        self.labelp30.setText("")
+        self.labelp30.setObjectName("labelp30")
+        self.labelp31 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp31.setGeometry(QtCore.QRect(670, 270, 71, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp31.setFont(font)
+        self.labelp31.setText("")
+        self.labelp31.setObjectName("labelp31")
+        self.court4_2 = QtWidgets.QLabel(self.centralwidget)
+        self.court4_2.setGeometry(QtCore.QRect(670, 180, 81, 21))
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        font.setBold(False)
+        font.setWeight(50)
+        self.court4_2.setFont(font)
+        self.court4_2.setObjectName("court4_2")
+        self.labelp29 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp29.setGeometry(QtCore.QRect(670, 220, 51, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp29.setFont(font)
+        self.labelp29.setText("")
+        self.labelp29.setObjectName("labelp29")
+        self.labelp32 = QtWidgets.QLabel(self.centralwidget)
+        self.labelp32.setGeometry(QtCore.QRect(740, 270, 61, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.labelp32.setFont(font)
+        self.labelp32.setText("")
+        self.labelp32.setObjectName("labelp32")
+        self.roundsLabel = QtWidgets.QLabel(self.centralwidget)
+        self.roundsLabel.setGeometry(QtCore.QRect(170, 180, 61, 16))
+        font = QtGui.QFont()
+        font.setPointSize(13)
+        self.roundsLabel.setFont(font)
+        self.roundsLabel.setObjectName("roundsLabel")
+        self.spinBox = QtWidgets.QSpinBox(self.centralwidget)
+        self.spinBox.setGeometry(QtCore.QRect(170, 200, 91, 21))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.spinBox.setFont(font)
+        self.spinBox.setObjectName("spinBox")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 830, 21))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
 
-def playerSort():
-    random.shuffle(players)
-    for x in range(rounds):
-        y = 0
-        while y < len(players):
-            if y % 2 == 0:
-                if players[y + 1] in players[y].playedWith:
-                    random.shuffle(players)
-                    y = 0
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+        self.lineEdit9.hide()
+        self.lineEdit10.hide()
+        self.lineEdit11.hide()
+        self.lineEdit12.hide()
+        self.lineEdit13.hide()
+        self.lineEdit14.hide()
+        self.lineEdit15.hide()
+        self.lineEdit16.hide()
+        self.court1.hide()
+        self.court2.hide()
+        self.court3.hide()
+        self.court4.hide()
+        self.court1_2.hide()
+        self.court2_2.hide()
+        self.court3_2.hide()
+        self.court4_2.hide()
+
+
+        self.addPlayer.clicked.connect(self.addPlayerClick)
+        self.Button1.clicked.connect(self.buttonClick)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.Button1.setText(_translate("MainWindow", "Go"))
+        self.addPlayer.setText(_translate("MainWindow", "Add Player"))
+        self.deletePlayer.setText(_translate("MainWindow", "Remove Player"))
+        self.label.setText(_translate("MainWindow", "Players"))
+        self.label_2.setText(_translate("MainWindow", "Lineup"))
+        self.court1.setText(_translate("MainWindow", "Court 1:"))
+        self.court2.setText(_translate("MainWindow", "Court 2:"))
+        self.court3.setText(_translate("MainWindow", "Court 3:"))
+        self.court1_2.setText(_translate("MainWindow", "Court 1:"))
+        self.court2_2.setText(_translate("MainWindow", "Court 2:"))
+        self.court3_2.setText(_translate("MainWindow", "Court 3:"))
+        self.court4.setText(_translate("MainWindow", "Court 4:"))
+        self.court4_2.setText(_translate("MainWindow", "Court 4:"))
+        self.roundsLabel.setText(_translate("MainWindow", "Rounds:"))
+
+    def buttonClick(self):
+        if self.lineEdit.text() == "":
+            pass
+        else:
+            p1 = Players(self.lineEdit.text())
+            self.addToArray(p1)
+        if self.lineEdit2.text() == "":
+            pass
+        else:
+            p2 = Players(self.lineEdit2.text())
+            self.addToArray(p2)
+        if self.lineEdit3.text() == "":
+            pass
+        else:
+            p3 = Players(self.lineEdit3.text())
+            self.addToArray(p3)
+        if self.lineEdit4.text() == "":
+            pass
+        else:
+            p4 = Players(self.lineEdit4.text())
+            self.addToArray(p4)
+        if self.lineEdit5.text() == "":
+            pass
+        else:
+            p5 = Players(self.lineEdit5.text())
+            self.addToArray(p5)
+        if self.lineEdit6.text() == "":
+            pass
+        else:
+            p6 = Players(self.lineEdit6.text())
+            self.addToArray(p6)
+        if self.lineEdit7.text() == "":
+            pass
+        else:
+            p7 = Players(self.lineEdit7.text())
+            self.addToArray(p7)
+        if self.lineEdit8.text() == "":
+            pass
+        else:
+            p8 = Players(self.lineEdit8.text())
+            self.addToArray(p8)
+        if self.lineEdit9.text() == "":
+            pass
+        else:
+            p9 = Players(self.lineEdit9.text())
+            self.addToArray(p9)
+        if self.lineEdit10.text() == "":
+            pass
+        else:
+            p10 = Players(self.lineEdit10.text())
+            self.addToArray(p10)
+        if self.lineEdit11.text() == "":
+            pass
+        else:
+            p11 = Players(self.lineEdit11.text())
+            self.addToArray(p11)
+        if self.lineEdit12.text() == "":
+            pass
+        else:
+            p12 = Players(self.lineEdit12.text())
+            self.addToArray(p12)
+        if self.lineEdit13.text() == "":
+            pass
+        else:
+            p13 = Players(self.lineEdit13.text())
+            self.addToArray(p13)
+        if self.lineEdit14.text() == "":
+            pass
+        else:
+            p14 = Players(self.lineEdit14.text())
+            self.addToArray(p14)
+        if self.lineEdit15.text() == "":
+            pass
+        else:
+            p15 = Players(self.lineEdit15.text())
+            self.addToArray(p15)
+        if self.lineEdit16.text() == "":
+            pass
+        else:
+            p16 = Players(self.lineEdit16.text())
+            self.addToArray(p16)
+
+        self.playerScramble()
+        print(len(players))
+
+    def addToArray(self, p):
+        players.append(p)
+
+    def addPlayerClick(self):
+        if self.lineEdit9.isHidden():
+            self.lineEdit9.show()
+            self.lineEdit10.show()
+            return
+        if self.lineEdit11.isHidden():
+            self.lineEdit11.show()
+            self.lineEdit12.show()
+            return
+        if self.lineEdit13.isHidden():
+            self.lineEdit13.show()
+            self.lineEdit14.show()
+            return
+        if self.lineEdit15.isHidden():
+            self.lineEdit15.show()
+            self.lineEdit16.show()
+            return
+
+    def playerScramble(self):
+        rounds = self.spinBox.value()
+        random.shuffle(players)
+        for x in range(rounds):
+            y = 0
+            while y < len(players):
+                if y % 2 == 0:
+                    if players[y + 1] in players[y].playedWith:
+                        random.shuffle(players)
+                        y = 0
+                    else:
+                        y += 1
                 else:
-                    y+=1
-            else:
-                if players[y - 1] in players[y].playedWith:
-                    random.shuffle(players)
-                    y = 0
+                    if players[y - 1] in players[y].playedWith:
+                        random.shuffle(players)
+                        y = 0
+                    else:
+                        y += 1
+            y = 0
+            for z in players:
+                if y % 2 == 0:
+                    players[y].addPlayer(players[y + 1])
+                    y += 1
+
                 else:
-                    y+=1
-        y = 0
-        for x in players:
-            if y % 2 == 0:
-                players[y].addPlayer(players[y + 1])
-                y+=1
+                    players[y].addPlayer(players[y - 1])
+                    y += 1
+            if len(players) == 8:
+                if x == 0:
+                    print("dfdfdffdf")
+                    self.court1.show()
+                    self.court2.show()
 
-            else:
-                players[y].addPlayer(players[y - 1])
-                y+=1
+                    self.labelp1.show()
+                    self.labelp2.show()
+                    self.labelp3.show()
+                    self.labelp4.show()
+                    self.labelp5.show()
+                    self.labelp6.show()
+                    self.labelp7.show()
+                    self.labelp8.show()
 
-playerSort()
+                    self.labelp1.setText(players[0].name)
+                    self.labelp2.setText(players[1].name)
+                    self.labelp3.setText(players[2].name)
+                    self.labelp4.setText(players[3].name)
+                    self.labelp5.setText(players[4].name)
+                    self.labelp6.setText(players[5].name)
+                    self.labelp7.setText(players[6].name)
+                    self.labelp8.setText(players[7].name)
+                    #players.clear()
+                elif x == 1:
+                    self.court1_2.show()
+                    self.court2_2.show()
+
+                    self.labelp17.show()
+                    self.labelp18.show()
+                    self.labelp19.show()
+                    self.labelp20.show()
+                    self.labelp21.show()
+                    self.labelp22.show()
+                    self.labelp23.show()
+                    self.labelp24.show()
+
+                    self.labelp17.setText(players[0].name)
+                    self.labelp18.setText(players[1].name)
+                    self.labelp19.setText(players[2].name)
+                    self.labelp20.setText(players[3].name)
+                    self.labelp21.setText(players[4].name)
+                    self.labelp22.setText(players[5].name)
+                    self.labelp23.setText(players[6].name)
+                    self.labelp24.setText(players[7].name)
+                    players.clear()
+
+            elif len(players) == 12:
+                if x == 0:
+                    self.court1.show()
+                    self.court2.show()
+                    self.court3.show()
+
+                    self.labelp1.show()
+                    self.labelp2.show()
+                    self.labelp3.show()
+                    self.labelp4.show()
+                    self.labelp5.show()
+                    self.labelp6.show()
+                    self.labelp7.show()
+                    self.labelp8.show()
+                    self.labelp9.show()
+                    self.labelp10.show()
+                    self.labelp11.show()
+                    self.labelp12.show()
+
+                    self.labelp1.setText(players[0].name)
+                    self.labelp2.setText(players[1].name)
+                    self.labelp3.setText(players[2].name)
+                    self.labelp4.setText(players[3].name)
+                    self.labelp5.setText(players[4].name)
+                    self.labelp6.setText(players[5].name)
+                    self.labelp7.setText(players[6].name)
+                    self.labelp8.setText(players[7].name)
+                    self.labelp9.setText(players[8].name)
+                    self.labelp10.setText(players[9].name)
+                    self.labelp11.setText(players[10].name)
+                    self.labelp12.setText(players[11].name)
+                    #players.clear()
+                elif x == 1:
+                    self.court1_2.show()
+                    self.court2_2.show()
+                    self.court3_2.show()
+
+                    self.labelp17.show()
+                    self.labelp18.show()
+                    self.labelp19.show()
+                    self.labelp20.show()
+                    self.labelp21.show()
+                    self.labelp22.show()
+                    self.labelp23.show()
+                    self.labelp24.show()
+                    self.labelp25.show()
+                    self.labelp26.show()
+                    self.labelp27.show()
+                    self.labelp28.show()
+
+                    self.labelp17.setText(players[0].name)
+                    self.labelp18.setText(players[1].name)
+                    self.labelp19.setText(players[2].name)
+                    self.labelp20.setText(players[3].name)
+                    self.labelp21.setText(players[4].name)
+                    self.labelp22.setText(players[5].name)
+                    self.labelp23.setText(players[6].name)
+                    self.labelp24.setText(players[7].name)
+                    self.labelp25.setText(players[8].name)
+                    self.labelp26.setText(players[9].name)
+                    self.labelp27.setText(players[10].name)
+                    self.labelp28.setText(players[11].name)
+                    players.clear()
+            elif len(players) == 16:
+                if x == 0:
+                    self.court1.show()
+                    self.court2.show()
+                    self.court3.show()
+                    self.court4.show()
+
+                    self.labelp1.show()
+                    self.labelp2.show()
+                    self.labelp3.show()
+                    self.labelp4.show()
+                    self.labelp5.show()
+                    self.labelp6.show()
+                    self.labelp7.show()
+                    self.labelp8.show()
+                    self.labelp9.show()
+                    self.labelp10.show()
+                    self.labelp11.show()
+                    self.labelp12.show()
+                    self.labelp13.show()
+                    self.labelp14.show()
+                    self.labelp15.show()
+                    self.labelp16.show()
+
+                    self.labelp1.setText(players[0].name)
+                    self.labelp2.setText(players[1].name)
+                    self.labelp3.setText(players[2].name)
+                    self.labelp4.setText(players[3].name)
+                    self.labelp5.setText(players[4].name)
+                    self.labelp6.setText(players[5].name)
+                    self.labelp7.setText(players[6].name)
+                    self.labelp8.setText(players[7].name)
+                    self.labelp9.setText(players[8].name)
+                    self.labelp10.setText(players[9].name)
+                    self.labelp11.setText(players[10].name)
+                    self.labelp12.setText(players[11].name)
+                    self.labelp13.setText(players[12].name)
+                    self.labelp14.setText(players[13].name)
+                    self.labelp15.setText(players[14].name)
+                    self.labelp16.setText(players[15].name)
+                elif x == 1:
+                    self.court1_2.show()
+                    self.court2_2.show()
+                    self.court3_2.show()
+                    self.court4_2.show()
+
+                    self.labelp17.show()
+                    self.labelp18.show()
+                    self.labelp19.show()
+                    self.labelp20.show()
+                    self.labelp21.show()
+                    self.labelp22.show()
+                    self.labelp23.show()
+                    self.labelp24.show()
+                    self.labelp25.show()
+                    self.labelp26.show()
+                    self.labelp27.show()
+                    self.labelp28.show()
+                    self.labelp29.show()
+                    self.labelp30.show()
+                    self.labelp31.show()
+                    self.labelp32.show()
+
+                    self.labelp17.setText(players[0].name)
+                    self.labelp18.setText(players[1].name)
+                    self.labelp19.setText(players[2].name)
+                    self.labelp20.setText(players[3].name)
+                    self.labelp21.setText(players[4].name)
+                    self.labelp22.setText(players[5].name)
+                    self.labelp23.setText(players[6].name)
+                    self.labelp24.setText(players[7].name)
+                    self.labelp25.setText(players[8].name)
+                    self.labelp26.setText(players[9].name)
+                    self.labelp27.setText(players[10].name)
+                    self.labelp28.setText(players[11].name)
+                    self.labelp29.setText(players[12].name)
+                    self.labelp30.setText(players[13].name)
+                    self.labelp31.setText(players[14].name)
+                    self.labelp32.setText(players[15].name)
+                    players.clear()
+        self.spinBox.setValue(0)
 
 
+        print("success")
 
 
-
-
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
